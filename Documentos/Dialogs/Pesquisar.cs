@@ -9,7 +9,7 @@ namespace Documentos
 {
     public partial class Pesquisar : Form
     {
-
+        public static int ClienteID { get; set; }
         public DataGridView Dgv { get; set; }
         public static bool Verificarbtn = false;
 
@@ -93,6 +93,7 @@ namespace Documentos
             if (dataGridView1.CurrentRow != null)
             {
                 int id = Convert.ToInt32((int)dataGridView1.CurrentRow.Cells[0].Value);
+                ClienteID = Convert.ToInt32((int)dataGridView1.CurrentRow.Cells[0].Value);
                 Dispose();
                 VerificarNotas ver = new VerificarNotas() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
                 Inicio.pnl_container.Controls.Add(ver);
